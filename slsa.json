@@ -1,0 +1,219 @@
+{
+  "buildConfig": {
+    "digestMapping": {
+      "sha256:15cd21f1412e1ba68cf273d2ab9e44e8e1ef90781bea1e2d04b9d899183a5ade": "step0",
+      "sha256:6d01032dcb8ba19e5307444b0962ac1a8006f26e27f835a81e695ec3108fbdbc": "step2",
+      "sha256:b55ecda15c389a9dd80e0cfaab364d2e8d97b38bd6c20833f86208d86adf6048": "step1"
+    },
+    "llbDefinition": [
+      {
+        "id": "step0",
+        "op": {
+          "Op": {
+            "source": {
+              "identifier": "docker-image://registry.access.redhat.com/ubi8/ubi-minimal@sha256:8d43664c250c72d35af8498c7ff76a9f0d42f16b9b3b29f0caa747121778de0e"
+            }
+          },
+          "constraints": {},
+          "platform": {
+            "Architecture": "arm64",
+            "OS": "linux"
+          }
+        }
+      },
+      {
+        "id": "step1",
+        "inputs": [
+          "step0:0"
+        ],
+        "op": {
+          "Op": {
+            "exec": {
+              "meta": {
+                "args": [
+                  "/bin/sh",
+                  "-c",
+                  "echo \"hello\""
+                ],
+                "cwd": "/",
+                "env": [
+                  "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                  "container=oci"
+                ],
+                "removeMountStubsRecursive": true
+              },
+              "mounts": [
+                {
+                  "dest": "/",
+                  "input": 0,
+                  "output": 0
+                }
+              ]
+            }
+          },
+          "constraints": {},
+          "platform": {
+            "Architecture": "arm64",
+            "OS": "linux"
+          }
+        }
+      },
+      {
+        "id": "step2",
+        "inputs": [
+          "step1:0"
+        ],
+        "op": {
+          "Op": null
+        }
+      }
+    ]
+  },
+  "buildType": "https://mobyproject.org/buildkit@v1",
+  "builder": {
+    "id": ""
+  },
+  "invocation": {
+    "configSource": {
+      "entryPoint": "Dockerfile"
+    },
+    "environment": {
+      "platform": "linux/arm64"
+    },
+    "parameters": {
+      "frontend": "dockerfile.v0",
+      "locals": [
+        {
+          "name": "context"
+        },
+        {
+          "name": "dockerfile"
+        }
+      ]
+    }
+  },
+  "materials": [
+    {
+      "digest": {
+        "sha256": "8d43664c250c72d35af8498c7ff76a9f0d42f16b9b3b29f0caa747121778de0e"
+      },
+      "uri": "pkg:docker/registry.access.redhat.com/ubi8/ubi-minimal?digest=sha256:8d43664c250c72d35af8498c7ff76a9f0d42f16b9b3b29f0caa747121778de0e&platform=linux%2Farm64"
+    }
+  ],
+  "metadata": {
+    "buildFinishedOn": "2023-08-27T18:00:49.915111047Z",
+    "buildInvocationID": "r05b39zq958e9xgthst16db6w",
+    "buildStartedOn": "2023-08-27T18:00:49.876293381Z",
+    "completeness": {
+      "environment": true,
+      "materials": false,
+      "parameters": true
+    },
+    "https://mobyproject.org/buildkit@v1#metadata": {
+      "layers": {
+        "step0:0": [
+          [
+            {
+              "digest": "sha256:aa1f96e7f3853b253fafa945478a823e6817be5fa328738f4aa190b41b8048cf",
+              "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+              "size": 37512568
+            }
+          ]
+        ],
+        "step1:0": [
+          [
+            {
+              "digest": "sha256:aa1f96e7f3853b253fafa945478a823e6817be5fa328738f4aa190b41b8048cf",
+              "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+              "size": 37512568
+            },
+            {
+              "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+              "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+              "size": 32
+            }
+          ]
+        ]
+      },
+      "source": {
+        "infos": [
+          {
+            "data": "RlJPTSByZWdpc3RyeS5hY2Nlc3MucmVkaGF0LmNvbS91Ymk4L3ViaS1taW5pbWFsQHNoYTI1Njo4ZDQzNjY0YzI1MGM3MmQzNWFmODQ5OGM3ZmY3NmE5ZjBkNDJmMTZiOWIzYjI5ZjBjYWE3NDcxMjE3NzhkZTBlCgpSVU4gZWNobyAiaGVsbG8iCg==",
+            "digestMapping": {
+              "sha256:4178053c8c3972314e34f164e5eb6d0323c8da49956c64a50d2bc65e9f9b8d0a": "step0",
+              "sha256:b893a73a78808c4d2b92c42e72bdb2b01305890a0e140b789a80c1718d279f82": "step1"
+            },
+            "filename": "Dockerfile",
+            "language": "Dockerfile",
+            "llbDefinition": [
+              {
+                "id": "step0",
+                "op": {
+                  "Op": {
+                    "source": {
+                      "attrs": {
+                        "local.differ": "none",
+                        "local.followpaths": "[\"Dockerfile\",\"Dockerfile.dockerignore\",\"dockerfile\"]",
+                        "local.sharedkeyhint": "dockerfile"
+                      },
+                      "identifier": "local://dockerfile"
+                    }
+                  },
+                  "constraints": {}
+                }
+              },
+              {
+                "id": "step1",
+                "inputs": [
+                  "step0:0"
+                ],
+                "op": {
+                  "Op": null
+                }
+              }
+            ]
+          }
+        ],
+        "locations": {
+          "step0": {
+            "locations": [
+              {
+                "ranges": [
+                  {
+                    "end": {
+                      "line": 1
+                    },
+                    "start": {
+                      "line": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "step1": {
+            "locations": [
+              {
+                "ranges": [
+                  {
+                    "end": {
+                      "line": 3
+                    },
+                    "start": {
+                      "line": 3
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "vcs": {
+        "revision": "ef738caef75ef6f53d45f5c1d51471c55d22f95c",
+        "source": "git@github.com:garethahealy/sigstore-demo.git"
+      }
+    },
+    "reproducible": false
+  }
+}
