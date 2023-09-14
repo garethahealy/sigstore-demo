@@ -101,9 +101,9 @@
     }
   ],
   "metadata": {
-    "buildFinishedOn": "2023-08-27T18:00:49.915111047Z",
-    "buildInvocationID": "r05b39zq958e9xgthst16db6w",
-    "buildStartedOn": "2023-08-27T18:00:49.876293381Z",
+    "buildFinishedOn": "2023-09-14T11:05:52.676377089Z",
+    "buildInvocationID": "0ua9b60izzyg7rgkkqvwvnqg5",
+    "buildStartedOn": "2023-09-14T11:05:51.47338948Z",
     "completeness": {
       "environment": true,
       "materials": false,
@@ -140,8 +140,8 @@
           {
             "data": "RlJPTSByZWdpc3RyeS5hY2Nlc3MucmVkaGF0LmNvbS91Ymk4L3ViaS1taW5pbWFsQHNoYTI1Njo4ZDQzNjY0YzI1MGM3MmQzNWFmODQ5OGM3ZmY3NmE5ZjBkNDJmMTZiOWIzYjI5ZjBjYWE3NDcxMjE3NzhkZTBlCgpSVU4gZWNobyAiaGVsbG8iCg==",
             "digestMapping": {
-              "sha256:4178053c8c3972314e34f164e5eb6d0323c8da49956c64a50d2bc65e9f9b8d0a": "step0",
-              "sha256:b893a73a78808c4d2b92c42e72bdb2b01305890a0e140b789a80c1718d279f82": "step1"
+              "sha256:43d7f43d34cdf5fd3e5f59d03a32cf6502a861480f17cdc90cc9d700ee38dbce": "step0",
+              "sha256:9584c27f97eca744002855a2cfb0523984dd5bbb1deb64c650fdc0f59e5834f6": "step1"
             },
             "filename": "Dockerfile",
             "language": "Dockerfile",
@@ -210,7 +210,7 @@
         }
       },
       "vcs": {
-        "revision": "ef738caef75ef6f53d45f5c1d51471c55d22f95c",
+        "revision": "cfdc7dc0877069137bbb74dcb858e4dcd5aae6c0",
         "source": "git@github.com:garethahealy/sigstore-demo.git"
       }
     },
